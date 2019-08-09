@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button gsp_btn;
     private Button network_btn;
     private Button best_btn;
-    private static Context context;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        gsp_btn = (Button) findViewById(R.id.btn_gsp);
-        network_btn = (Button) findViewById(R.id.btn_network);
-        best_btn = (Button) findViewById(R.id.btn_best);
+        gsp_btn = findViewById(R.id.btn_gsp);
+        network_btn = findViewById(R.id.btn_network);
+        best_btn =  findViewById(R.id.btn_best);
     }
 
     private void initPermission() {
@@ -148,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         c.setBearingAccuracy(Criteria.ACCURACY_COARSE);//设置COARSE精度标准
         c.setAccuracy(Criteria.ACCURACY_LOW);//设置低精度
         //... Criteria 还有其他属性，就不一一介绍了
+        //一般来说bestlocation都是捕捉gps的location的位置
         Location best = LocationUtils.getBestLocation(this, c);
         if (best == null) {
             Toast.makeText(this, " best location is null", Toast.LENGTH_SHORT).show();
