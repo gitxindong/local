@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">local</string>
+    <string name="btn_gps">gps</string>
+    <string name="btn_network">network</string>
+    <string name="btn_best">best</string>
+
+
+</resources>
